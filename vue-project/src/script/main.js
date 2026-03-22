@@ -1,3 +1,4 @@
+// 智能面试2 的主脚本逻辑，改为 ES 模块形式，并导出挂载函数以便在路由页面中使用
 import { createApp } from 'vue';
 import '../styles/style.css';
 
@@ -7,7 +8,7 @@ const App = {
     return {
       view: 'home', // home | question | interview | report | analysis
       selectedTrack: '', // frontend | backend | algo | test
-      questionTab: 'bank', // bank | project | behavior | multimodal | history
+      questionTab: 'bank', // bank | multimodal | history
       interviewInited: false,
       analysisReport: {
         overall: 85,
@@ -105,9 +106,11 @@ const App = {
       this.view = 'home';
       this.questionTab = 'bank';
     },
+    goAuth(mode) {
+      window.location.href = mode === 'register' ? '/register' : '/login';
+    },
+    // 新增：点击岗位跳转到对应页面
     goToJob(track) {
-      this.selectedTrack = track;
-      // 根据岗位跳转到对应的路由
       const routeMap = {
         frontend: '/frontques',
         backend: '/javaques',
@@ -118,12 +121,12 @@ const App = {
       if (route && window.__router__) {
         window.__router__.push(route);
       } else {
-        console.warn('路由实例未找到，尝试使用 window.location');
+        console.warn('路由实例未找到，尝试直接跳转');
         window.location.href = route;
       }
     },
     goQuestion(tab = 'bank') {
-      // 如果有选中的岗位，直接跳转到对应页面
+      // 如果有选中的岗位，直接跳转
       if (this.selectedTrack) {
         const routeMap = {
           frontend: '/frontques',
@@ -132,13 +135,13 @@ const App = {
           test: '/testques'
         };
         const route = routeMap[this.selectedTrack];
-        if (route) {
-          this.$router.push(route);
+        if (route && window.__router__) {
+          window.__router__.push(route);
           return;
         }
       }
-      // 如果没有选中岗位，显示岗位选择页面
       this.view = 'question';
+      this.selectedTrack = '';
       this.questionTab = tab;
     },
     goInterview() {
@@ -154,7 +157,7 @@ const App = {
     },
     // 统一侧边栏导航：除首页外其他界面共用同一套侧边栏
     goSidebar(section) {
-      if (section === 'bank' || section === 'project' || section === 'behavior') {
+      if (section === 'bank') {
         this.view = 'question';
         this.questionTab = section;
       } else if (section === 'multimodal') {
@@ -172,8 +175,8 @@ const App = {
           <span class="brand-text">AI 模拟面试官</span>
         </div>
         <div class="auth-buttons">
-          <button class="btn btn-ghost">登录</button>
-          <button class="btn btn-primary">注册</button>
+          <button class="btn btn-ghost" @click="goAuth('login')">登录</button>
+          <button class="btn btn-primary" @click="goAuth('register')">注册</button>
         </div>
       </header>
 
@@ -195,20 +198,12 @@ const App = {
                 <div class="card-title">多模态模拟面试</div>
                 <div class="card-subtitle">语音 / 文本互动面试</div>
               </button>
-              <button class="card" @click="goSidebar('project')">
-                <div class="card-title">项目经历深挖</div>
-                <div class="card-subtitle">深挖项目亮点与细节</div>
-              </button>
             </div>
 
             <div class="row row-bottom">
               <button class="card card-introduce">
                 <div class="card-title">INTRODUCE</div>
                 <div class="card-subtitle">介绍说明</div>
-              </button>
-              <button class="card" @click="goSidebar('behavior')">
-                <div class="card-title">行为与场景题</div>
-                <div class="card-subtitle">模拟行为面与情景题</div>
               </button>
               <button class="card" @click="goSidebar('history')">
                 <div class="card-title">历史记录与能力曲线</div>
@@ -1008,6 +1003,13 @@ function initInterviewPage() {
     });
   }
 
+  const sendBtn = document.getElementById('sendBtn');
+  if (sendBtn) {
+    sendBtn.addEventListener('click', () => {
+      sendMessage();
+    });
+  }
+
   // 语音识别初始化与事件
   const voiceBtn = document.getElementById('voiceBtn');
   if (SpeechRec && voiceBtn) {
@@ -1054,7 +1056,9 @@ export function mountAiInterview(selector = '#ai-interview-app') {
   const app = createApp(App);
   const rootVm = app.mount(selector);
   window.__rootApp__ = rootVm;
+  // 保存路由实例到全局，供 goToJob 使用
   window.__router__ = rootVm.$router;
+  // 将部分方法暴露到 window，给模板中的内联事件调用
   window.startInterview = startInterview;
   window.endInterview = endInterview;
   window.confirmVoice = confirmVoice;

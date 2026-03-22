@@ -9,9 +9,19 @@ import introduce from '../views/system/introduce.vue'
 import aiInterview from '../views/system/aiInterview.vue'
 import javaques from '../views/system/javaques.vue'
 import frontques from '../views/system/frontques.vue'
-import Login from '../views/system/login.vue'
+import pythonques from '../views/system/pythonques.vue'
+import testques from '../views/system/testques.vue'
+import LoginView from '../views/system/login.vue'
 
 const routes = [
+  {
+    path: '/login',
+    component: LoginView
+  },
+  {
+    path: '/register',
+    component: LoginView
+  },
   {
   path: '/',
   component: AppLayout, // 父路由使用布局组件
@@ -22,7 +32,8 @@ const routes = [
       { path: '/ai-interview', component: aiInterview },
       { path: '/javaques', component: javaques },
       { path: '/frontques', component: frontques },
-      { path: '/login', component: Login },
+      { path: '/pythonques', component: pythonques },
+      { path: '/testques', component: testques }
     ]
   }
 ]

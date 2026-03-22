@@ -30,26 +30,6 @@ const questionBank = computed(() => {
     : 'butRouter';
 });
 
-// 项目经历深挖
-const projectDeep = computed(() => {
-  const route = currentRoute.value;
-  return route.path === '/ai-interview' &&
-    route.query.view === 'question' &&
-    route.query.tab === 'project'
-    ? 'butRouterDeeper'
-    : 'butRouter';
-});
-
-// 行为与场景题
-const behaviorScene = computed(() => {
-  const route = currentRoute.value;
-  return route.path === '/ai-interview' &&
-    route.query.view === 'question' &&
-    route.query.tab === 'behavior'
-    ? 'butRouterDeeper'
-    : 'butRouter';
-});
-
 // 多模态交互式模拟面试
 const multimodalInterview = computed(() => {
   const route = currentRoute.value;
@@ -134,20 +114,6 @@ const beBig = () => {
             @click="routerPush({ path: '/ai-interview', query: { view: 'question', tab: 'bank' } })"
           >
             <span>岗位题库</span>
-          </el-button>
-          <el-button
-            :class="projectDeep"
-            class="ai-menu-btn"
-            @click="routerPush({ path: '/ai-interview', query: { view: 'question', tab: 'project' } })"
-          >
-            <span>项目经历深挖</span>
-          </el-button>
-          <el-button
-            :class="behaviorScene"
-            class="ai-menu-btn"
-            @click="routerPush({ path: '/ai-interview', query: { view: 'question', tab: 'behavior' } })"
-          >
-            <span>行为与场景题</span>
           </el-button>
           <el-button
             :class="multimodalInterview"

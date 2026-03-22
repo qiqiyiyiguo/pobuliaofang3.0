@@ -9,7 +9,7 @@ import request from '../utils/request.js'  // 根据实际路径调整
  */
 export function login(username, password) {
   return request({
-    url: '/api/user/login',
+    url: '/user/login',
     method: 'post',
     data: {
       username,
@@ -25,7 +25,7 @@ export function login(username, password) {
  */
 export function register(userInfo) {
   return request({
-    url: '/api/user/register',
+    url: '/user/register',
     method: 'post',
     data: userInfo
   })
@@ -37,7 +37,7 @@ export function register(userInfo) {
  */
 export function getUserInfo() {
   return request({
-    url: '/api/user/info',
+    url: '/user/info',
     method: 'get'
   })
 }
@@ -49,7 +49,7 @@ export function getUserInfo() {
  */
 export function updateUserInfo(userInfo) {
   return request({
-    url: '/api/user/update',
+    url: '/user/update',
     method: 'put',
     data: userInfo
   })
@@ -63,7 +63,7 @@ export function updateUserInfo(userInfo) {
  */
 export function changePassword(oldPassword, newPassword) {
   return request({
-    url: '/api/user/change-password',
+    url: '/user/change-password',
     method: 'post',
     data: {
       oldPassword,
@@ -78,7 +78,7 @@ export function changePassword(oldPassword, newPassword) {
  */
 export function logout() {
   return request({
-    url: '/api/user/logout',
+    url: '/user/logout',
     method: 'post'
   })
 }

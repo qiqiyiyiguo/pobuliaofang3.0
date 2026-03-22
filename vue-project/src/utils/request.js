@@ -4,7 +4,7 @@ import axios from 'axios'
 // 创建 axios 实例
 const request = axios.create({
   baseURL: '/api',  // 后端 API 基础地址
-  timeout: 1000,                      // 请求超时时间（ms），可根据实际调整
+  timeout: 30000,                      // 请求超时时间（ms），可根据实际调整
   headers: {
     'Content-Type': 'application/json;charset=utf-8'
   }

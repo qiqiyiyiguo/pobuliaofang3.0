@@ -1,5 +1,5 @@
 <template>
-  <QuestionIndex module="Web" title="Web 前端工程师题库" />
+  <QuestionIndex module="Test" title="测试工程师题库" />
 </template>
 
 <script setup>
