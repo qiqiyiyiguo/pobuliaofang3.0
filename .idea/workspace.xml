@@ -1,16 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="b7bcdd7c-142e-45b4-a6dc-0b22c5613506" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/vue-project/src/assets/image/注册.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-project/src/assets/image/登录.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-project/src/components/layout/header.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-project/src/components/layout/header.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-project/src/router/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-project/src/router/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-project/src/script/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-project/src/script/main.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-project/src/utils/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/vue-project/src/utils/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-project/src/views/system/frontques.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-project/src/views/system/frontques.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-project/src/views/system/javaques.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-project/src/views/system/javaques.vue" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/vue-project/src/views/system/login.vue" beforeDir="false" afterPath="$PROJECT_DIR$/vue-project/src/views/system/login.vue" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/java-project/my-first-project/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/java-project/my-first-project/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/vue-project/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/vue-project/package-lock.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,10 +18,26 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 0
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "hwj0206"
+  }
 }]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/qiqiyiyiguo/pobuliaofang3.0.git",
+    "accountId": "3db2fe5d-39b3-41b5-bfb0-b81bb4fb01c7"
+  }
+}]]></component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
   <component name="ProjectId" id="3BI2QY8oTlKZTYudmeXDN8HrwWI" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -32,12 +46,28 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true"
+    "kotlin-language-version-configured": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-30f59d01ecdd-2fc7cc6b9a17-intellij.indexing.shared.core-IU-253.32098.37" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-IU-253.32098.37" />
+      </set>
+    </attachedChunks>
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="b7bcdd7c-142e-45b4-a6dc-0b22c5613506" name="Changes" comment="" />
@@ -45,7 +75,11 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1774162249109</updated>
+      <workItem from="1774234321079" duration="793000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
   </component>
 </project>
